@@ -1,0 +1,6 @@
+project = "docker-xxxxxx"
+public_key_path = "~/.ssh/appuser.pub"
+disk_image = "docker-base"
+private_key_path = "~/.ssh/appuser"
+node_count = "5"
+

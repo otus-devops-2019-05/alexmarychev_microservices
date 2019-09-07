@@ -1,0 +1,30 @@
+{
+
+    "variables": {
+            "machine_type": "f1-micro"
+        },	
+    "builders": [
+        {
+            "type": "googlecompute",
+            "project_id": "{{user `project_id`}}",
+            "image_name": "docker-app",
+            "image_family": "docker-base",
+            "source_image_family": "{{user `source_image_family`}}",
+            "zone": "europe-west1-b",
+            "ssh_username": "alexmar",
+            "machine_type": "{{user `machine_type`}}",
+	    "image_description": "images for ruby",
+	    "disk_type": "pd-standard",
+	    "disk_size": "10",
+	    "network": "default",
+	    "tags": "puma-server"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "ansible",
+	    "playbook_file": "../ansible/main.yml"
+        }
+    ]
+}
+
