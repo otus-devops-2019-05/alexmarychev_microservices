@@ -8,9 +8,9 @@ variables.json
 inventory.gcp.yml
 jdauphant.nginx/
 .vagrant/
-*.log
 *.pyc
 .molecule
 .cache
 .pytest_cache
+.env
 
