@@ -1,0 +1,13 @@
+---
+- name: Run docker
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Run docker
+      docker_container:
+        name: reddit
+        image: alexmarychev/otus-reddit:1.0
+        state: started
+        published_ports: "9292:9292"
+
