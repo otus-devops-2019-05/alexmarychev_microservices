@@ -1,0 +1,6 @@
+plugin: gcp_compute
+projects:
+  - docker-xxxxxx
+auth_kind: serviceaccount
+service_account_file: /home/appuser/docker-xxxxxx.json
+

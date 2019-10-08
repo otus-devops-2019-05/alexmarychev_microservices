@@ -1,0 +1,9 @@
+REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
+alexmar/ubuntu-tmp-file   latest              bb8446a53d22        9 seconds ago       120MB
+ubuntu                    16.04               5e13f8dd4c1a        5 weeks ago         120MB
+hello-world               latest              fce289e99eb9        8 months ago        1.84kB
+
+
+Отличие образа от контейнера в том, что образ это некий шаблон для создания контейнера. Docker берет образ и создает контейнер инициализируя различные параметры.
+У контейнера, в отличии от образа, открыт для записи верхний слой.
+
