@@ -7,33 +7,19 @@ services:
     networks:
       - back_net
   ui:
-    image: ${USERNAME}/ui:${UI_VER}
+    image: alexmarychev/ui:${UI_VER}
     ports:
       - ${UI_PORT}:9292/tcp
     networks:
       - front_net
   post:
-    image: ${USERNAME}/post:${POST_VER}
+    image: alexmarychev/post:${POST_VER}
     networks:
       - back_net
       - front_net
 
   comment:
-    image: ${USERNAME}/comment:${COMMENT_VER}
-    networks:
-      - back_net
-      - front_net
-
-  prometheus:
-    image: ${USERNAME}/prometheus
-    ports:
-      - '9090:9090'
-    volumes:
-      - prometheus_data:/prometheus
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--storage.tsdb.path=/prometheus'
-      - '--storage.tsdb.retention=1d'
+    image: alexmarychev/comment:${COMMENT_VER}
     networks:
       - back_net
       - front_net
@@ -52,7 +38,6 @@ services:
     networks:
       - back_net
       - front_net
-
 
 volumes:
   prometheus_data:
